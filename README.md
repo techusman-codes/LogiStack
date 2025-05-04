@@ -1,5 +1,3 @@
-
-
 # LogiStack
 
 **LogiStack** is a logistics and delivery management mobile application built with Flutter. The app provides an efficient and scalable way for businesses and drivers to manage deliveries, track shipments, and handle logistics operations. Built using Clean Architecture principles, Riverpod for state management, and secured authentication features, the app is designed for scalability, maintainability, and production-readiness.
@@ -11,36 +9,43 @@ This document outlines LogiStack’s core features, technology stack, and projec
 ## 🚀 Core Features
 
 ### 1. User Authentication & Authorization
+
 - **Secure Login/Signup** using email and password.
 - **JWT or Firebase Authentication** for session management.
 - **Role-based Access**: Admin, Dispatcher, Driver.
 - **Password Recovery and Email Verification**.
 
 ### 2. Delivery Management
+
 - **Create and Assign Deliveries**: Admins/Dispatchers can create tasks and assign them to drivers.
 - **Update Delivery Status**: Drivers can update delivery stages — Pending, In Transit, Delivered.
 - **Proof of Delivery**: Image upload or e-signature on delivery completion.
 - **Route Optimization (Optional)**: Suggest shortest path based on delivery location.
 
 ### 3. Real-Time Package Tracking
+
 - **Driver Location Tracking**: Background location updates.
 - **Map Integration**: Google Maps or OpenStreetMap to display routes and delivery status.
 - **Live Tracking** for users/admins.
 
 ### 4. Notifications & Alerts
+
 - **Push Notifications** for delivery updates and alerts (via FCM).
 - **In-app alerts** for failed deliveries, reassignment, or urgent tasks.
 
 ### 5. Analytics & Reports
+
 - **Delivery Success Rate**
 - **Driver Performance Reports**
 - **Package History and Audit Logs**
 
 ### 6. Offline Support & Local Caching
+
 - Use of **Hive** or **Drift/SQLite** for storing deliveries and syncing when online.
 - **Auto-Sync Mechanism** when network is restored.
 
 ### 7. Settings & User Preferences
+
 - **Theme Customization** (Dark/Light)
 - **Language Selection** (Multilingual support)
 - **Notification Preferences**
@@ -74,7 +79,28 @@ LogiStack aims to be a production-ready logistics app that balances clean UI, re
 Collaborators
 Usman Umar Garba - techusman-codes
 
-
-
-
-
+lib/
+│
+├── core/ # Core functionalities used throughout the app
+│ ├── constants/ # App-wide constants (strings, colors, etc.)
+│ ├── errors/ # Error models and handling
+│ ├── utils/ # Utilities and helper functions
+│ └── network/ # Network client (Dio/http, interceptors)
+│
+├── features/ # Each app feature is separated for scalability
+│ ├── auth/ # Authentication (login, register, forgot)
+│ │ ├── data/ # Data source and models
+│ │ ├── domain/ # Entities and repositories
+│ │ └── presentation/ # UI screens, widgets, blocs/providers
+│ │
+│ ├── tracking/ # Package tracking, live location
+│ ├── orders/ # Orders and deliveries
+│ ├── profile/ # User profile and settings
+│ └── dashboard/ # Main dashboard after login
+│
+├── shared/ # Reusable widgets, themes, dialogs, etc.
+│ ├── widgets/
+│ └── themes/
+│
+├── main.dart # Entry point
+└── routes/ # App route definitions

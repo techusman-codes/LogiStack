@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logistics/home.dart';
+import 'package:logistics/features/auth/presenttation/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Logistics App', home: Home(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Logistics App',
+      home: SplashScreen(),
     );
   }
 }
