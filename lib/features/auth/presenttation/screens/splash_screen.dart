@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logistics/features/auth/presenttation/screens/login_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,29 +24,35 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/image 3.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: Colors.indigoAccent.shade700,
+      body: Center(
+        child: Stack(
           children: [
-            SizedBox(height: 100),
-            Image.asset('assets/images/123.jpg', width: 50, height: 50),
-            Text(
-              'Samlogistics',
-              style: TextStyle(
-                color: Colors.white,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w500,
-                fontSize: 38,
+            Opacity(
+              opacity: 0.2,
+              child: Image(
+                image: AssetImage('assets/images/image 3.jpg'),
+                height: MediaQuery.of(context).size.height,
+                fit: BoxFit.fitHeight,
               ),
+            ),
+
+            Column(
+              children: [
+                SizedBox(height: 350),
+                Image(image: AssetImage('assets/images/123.jpg'), height: 50),
+                Center(
+                  child: Text(
+                    'Samlogistics',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: GoogleFonts.ubuntu().fontFamily,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
