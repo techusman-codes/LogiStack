@@ -46,9 +46,9 @@ class _SplashScreenState extends State<SplashScreen> {
                     'Samlogistics',
                     style: TextStyle(
                       color: Colors.white,
-                      fontFamily: GoogleFonts.ubuntu().fontFamily,
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: GoogleFonts.montserrat().fontFamily,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
